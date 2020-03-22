@@ -27,7 +27,7 @@ CornerStacks provides an easy way to layout SwiftUI views at the 4 corners of th
 I . Automatically in Xcode:
 
  - Click **File > Swift Packages > Add Package Dependency...**  
- - Use the package URL `https://github.com/filiplazov/CornerStacks` to add CornerStacks to your project.
+ - Use the package URL `https://github.com/filiplazov/CornerStacks` to add `CornerStacks` to your project.
 
 II . Manually in your **Package.swift** file add:
 
@@ -43,7 +43,7 @@ Before using any of the views make sure you import the `CornerStacks` module
 import CornerStacks
 ```
 
-There are 4 views defined for both `HSTack` and `VStack` that represent the 4 corners.
+There are 4 views defined for both `HStack` and `VStack` that represent the 4 corners.
 
 **HStack**
 
@@ -86,7 +86,7 @@ var body: some View {
       makeSquare(size: 80)
       makeSquare(size: 40)
     }
-    // it works also in nested views like other VStacks and HStacks
+    // it also works in nested views like other VStacks and HStacks
     HStack {
       TopLeadingHStack {
         makeSquare(size: 40)
