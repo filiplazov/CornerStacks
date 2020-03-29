@@ -5,14 +5,14 @@
 import SwiftUI
 
 public struct BottomTrailingHStack<Content>: View where Content: View {
+  private let content: Content
   let alignment: VerticalAlignment
   let spacing: CGFloat?
-  let content: () -> Content
   
-  public init(alignment: VerticalAlignment = .center, spacing: CGFloat? = nil, @ViewBuilder content: @escaping () -> Content) {
+  public init(alignment: VerticalAlignment = .center, spacing: CGFloat? = nil, @ViewBuilder content: () -> Content) {
     self.alignment = alignment
     self.spacing = spacing
-    self.content = content
+    self.content = content()
   }
   
   public var body: some View {
@@ -20,7 +20,7 @@ public struct BottomTrailingHStack<Content>: View where Content: View {
       Spacer()
       HStack(alignment: alignment, spacing: spacing) {
         Spacer()
-        content() 
+        content 
       }
     }
   }
